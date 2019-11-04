@@ -1,7 +1,7 @@
 /*
   Title: API Gateway Part II
   Author: Cory Gilliam
-  Date: Oct 22, 2019
+  Date: Nov 4, 2019
   Modified By:
   Description: Create user model
 */
@@ -20,3 +20,20 @@ module.exports = mongoose.model('User', userSchema);
 /**
  * Database queries
 */
+
+/**
+ * add user
+ * user.save is used to add a new user in our database
+ */
+module.exports.add = (user, callback) => {
+  user.save(callback);
+};
+
+/**
+ * user by id
+ * Retrieves a user of given id
+ */
+module.exports.getById = (id, callback) => {
+  var query = {_id: id};
+  User.findById(query, callback);
+};
