@@ -13,10 +13,10 @@ mongoose.Promise = require('bluebird');
 /**
  * Database connection
 */
-var mongoDB = 'mongodb+srv://admin:Zzxcvbnm@buwebdev-cluster-1-3umfh.mongodb.net/test?retryWrites=true&w=majority)';
+var mongoDB = 'mongodb+srv://admin:Zzxcvbnm@buwebdev-cluster-1-3umfh.mongodb.net/test?retryWrites=true&w=1)';
 mongoose.connect(mongoDB, {
   promiseLibrary: require('bluebird')
-}).then(() => console.log('connection successful'))
+}).then(() => console.log('Successful database connection.'))
 .catch((err) => console.error(err));
 
 var app = express();
@@ -37,7 +37,7 @@ app.use('/api', apiCatalog);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404, 'Found nothing. Try again.'));
 });
 
 // error handler
