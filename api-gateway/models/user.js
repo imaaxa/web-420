@@ -9,13 +9,13 @@
 /**
  * Fields Username, password, and email
 */
-var mongoose = require('mongoose');
+var mongoose   = require('mongoose');
 var userSchema = new mongoose.Schema({
   username: String,
   password: String,
   email: String
 });
-module.exports = mongoose.model('User', userSchema);
+var User = module.exports = mongoose.model('User', userSchema);
 
 /**
  * Database queries
@@ -36,4 +36,22 @@ module.exports.add = (user, callback) => {
 module.exports.getById = (id, callback) => {
   var query = {_id: id};
   User.findById(query, callback);
+};
+
+/**
+ * user by id
+ * Retrieves a user of given id
+ */
+module.exports.getById = (id, callback) => {
+  var query = { _id: id };
+  User.findById(query, callback);
+};
+
+/**
+ * user by email
+ * Retrieves a user of given email
+ */
+module.exports.getOne = (email, callback) => {
+  var query = { email: email };
+  User.findOne(query, callback);
 };

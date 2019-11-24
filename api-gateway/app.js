@@ -1,23 +1,20 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var createError   = require('http-errors');
+var express       = require('express');
+var path          = require('path');
+var cookieParser  = require('cookie-parser');
+var logger        = require('morgan');
+var indexRouter   = require('./routes/index');
+var apiCatalog    = require('./routes/api-catalog');
+var bodyParser = require('body-parser');
 
-var indexRouter = require('./routes/index');
-
-var apiCatalog = require('./routes/api-catalog');
-
-var mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
-/**
- * Database connection
-*/
-var mongoDB = 'mongodb+srv://admin:Zzxcvbnm@buwebdev-cluster-1-3umfh.mongodb.net/test?retryWrites=true&w=1)';
-mongoose.connect(mongoDB, {
-  promiseLibrary: require('bluebird')
-}).then(() => console.log('Successful database connection.'))
-.catch((err) => console.error(err));
+// Database connection
+var mongoose      = require('mongoose');
+mongoose.Promise  = require('bluebird');
+var mongoDB = 'mongodb+srv://admin:Zzxcvbnm@buwebdev-cluster-1-3umfh.mongodb.net/test';
+mongoose.connect(mongoDB, { promiseLibrary: require('bluebird') })
+  .then(  ()    => console.log('Successful database connection.') )
+  .catch( (err) => console.error(err) );
+// End Database connection
 
 var app = express();
 

@@ -11,6 +11,9 @@ var jwt    = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var config = require('../config');
 
+// token time length in seconds
+const token_expire = 86400;
+
 // Register a new user on POST
 exports.user_register = function (request, response) {
   // Hash the given password
@@ -26,12 +29,10 @@ exports.user_register = function (request, response) {
   // Add new user if there are no errors
   User.add(newUser, (error, user) => {
     // Send 505 status and message if there is an error
-    if (error) return response.status(500).send('There was a problem registering the user. ' + error);
+    if (error) return response.status(500).send('There was a problem registering the user: ' + error);
 
-    // Set a 24-hour token
-    var token = jwt.sign({ id: user._id }, config.web.secret, {
-      expiresIn: 86400
-    });
+    // Set up a token
+    var token = jwt.sign({ id: user._id }, config.web.secret, { expiresIn: token_expire });
 
     // Send 200 status along with token
     response.status(200).send({ auth: true, token: token });
@@ -44,23 +45,51 @@ exports.user_token = function(request, response) {
   var token = request.headers['x-access-token'];
 
   // Send 401 status with message if there is not token
-  if (!token) return response.status(401).send({ auth: false, message: 'No token provided' });
+  if (!token) return response.status(401).send({ auth: false, message: 'No token provided: ' + error });
 
   // Test the token
   jwt.verify(token, config.web.secret, function (error, decoded) {
     // Send 500 status and message if there is an error
-    if (error) return response.status(500).send({ auth: false, message: 'Failed to authenticate token' });
+    if (error) return response.status(500).send({ auth: false, message: 'Failed to authenticate token: ' + error });
 
     User.getById(decoded.id, function (error, user) {
-
       // Send 500 status and message if there problem finding the user
-      if (error) return response.status(500).send('There was a problem finding the user');
+      if (error) return response.status(500).send('There was a problem finding the user: ' + error);
 
       // Send 404 status and message if there is no user
-      if (!user) return response.status(404).send('No user found');
+      if (!user) return response.status(404).send('No user found: ' + error);
 
       // Send 200 status along with user object
       response.status(200).send(user);
     });
   });
+};
+
+// User login
+exports.user_login = function (request, response) {
+  User.getOne(request.body.email, function(error, user) {
+    // Send 505 status and message if there is an error
+    if (error) response.status(500).send('Error on server.' + error);
+
+    // Send 404 status and message if there is no user
+    if (!user) response.status(404).send('No user found.' + error);
+
+    // Encrypt the password
+    var passwordIsValid = bcrypt.compareSync(request.body.password, user.password);
+
+    // Send 402 status and remove any existing tokens
+    if (!passwordIsValid) response.status(401).send({ auth: false, token: null });
+
+    // Set up a token
+    var token = jwt.sign({ id: user._id }, config.web.secret, { expiresIn: token_expire });
+
+    // Send 200 status along with token
+    response.status(200).send( { auth: true, token: token } );
+  })
+};
+
+// User logout
+exports.user_logout = function (request, response) {
+  // Send 200 status along removing the token
+    response.status(200).send({ auth: false, token: null });
 };
