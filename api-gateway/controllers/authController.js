@@ -12,7 +12,7 @@ var bcrypt = require('bcryptjs');
 var config = require('../config');
 
 // token time length in seconds
-const token_expire = 86400;
+var token_expire = 86400;
 
 // Register a new user on POST
 exports.user_register = function (request, response) {
@@ -85,11 +85,11 @@ exports.user_login = function (request, response) {
 
     // Send 200 status along with token
     response.status(200).send( { auth: true, token: token } );
-  })
+  });
 };
 
 // User logout
 exports.user_logout = function (request, response) {
   // Send 200 status along removing the token
-    response.status(200).send({ auth: false, token: null });
+  response.status(200).send({ auth: false, token: null });
 };
