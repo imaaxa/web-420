@@ -1,0 +1,26 @@
+<p><em>Select two domain-specific formats and explain their purpose, protocol semantics, application semantics, medium, and where they are defined.</em></p>
+<h2>OData</h2>
+<ul>
+  <li><strong>Media types: </strong>application/json, odata=fullmetadata</li>
+  <li><strong>Definde in: </strong>Open standard in progress.</li>
+  <li><strong>Medium: </strong>JSON for parts, XML for others.</li>
+  <li><strong>Portocol semantics: </strong>Modified collection pattern (GET, POST, PUT, DELETE), with PATCH for partial updates and GET for queries, arbitrary state transitions with forms (GET for safe transitions, and POST for unsafe transitions)</li>
+  <li><strong>Application semantics: </strong>Collection pattern (feed and entry)</li>
+</ul>
+<h2>Atom Publishing Protocol</h2>
+<ul>
+  <li><strong>Media types: </strong>application/atom+xml, application/atomsvc+xml, application/atomcat+xml</li>
+  <li><strong>Definde in: </strong>RFC 5023, RFC 4287</li>
+  <li><strong>Medium: </strong>XML</li>
+  <li><strong>Portocol semantics: </strong>Collection pattern (GET, POST, PUT, DELETE), well-defined extensions add searching an other forms of navigation, all using GET links or forms.</li>
+  <li><strong>Application semantics: </strong>Collection pattern (feed and entry), entries hav the semantics of blog posts (aurhor, title, category, etc.), any entry that is not an Atom document is split into a binary Media Entry and an Atom Entry that contains metadata.</li>
+</ul>
+<p>(Richardson, 2013)</p>
+<p><em>Create two original diagrams showing the work-flow of the selected formats.</em></p>
+<ul>
+  <li></li>
+  <li></li>
+</ul>
+<p></p>
+<p><strong>References:</strong></p>
+<p>Richardson, L. (2013). <em>In RESTful Web APIs</em>.</p>

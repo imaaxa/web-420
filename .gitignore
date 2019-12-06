@@ -1,0 +1,19 @@
+# IDE extensions
+.editorconfig
+.vscode/*
+.idea/*
+*.iml
+
+# node
+node_modules
+.node_repl_history
+*-lock.json
+
+# Os X
+.DS_Store
+*.jpg
+*.jpeg
+*.png
+*.psd
+*.pdf
+*.zip

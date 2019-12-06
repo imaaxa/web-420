@@ -1,0 +1,18 @@
+<p><em>Explain the 7-step design procedure.</em></p>
+<ol>
+  <li>List the Semantic Descriptors: This is a list of everything that might go in or out of the API.</li>
+  <li>Draw a state diagram: Use boxes to represent a representation, a goup of semantic descriptor, arrows show state transitions.</li>
+  <li>Reconcile Names: Try to match up your needed semantic needs with a pre-existing progils, IANA-registered links.</li>
+  <li>Choose Media Type: Choose a media type that is compatible with your protocol semantics.</li>
+  <li>Write a Profile: Write a profile that documents your application semantics.</li>
+  <li>Implementation: Write your application's code.</li>
+  <li>Publication: Publish your API documentation, tutorials, and examples.</li>
+</ol>
+<p>* From O'Reilly RESTful Web API's, Chapter 9: The Design Procedure.</p>
+<p><em>Explain the versioning process for media types and profiles.</em></p>
+<p>"A REST API should spend almost all of its descriptive effort in defining the media type(s) used for representing resources and driving application state, or in defining extended relation names and/or hypertext-enabled mark-up for existing standard media types. (Paraschiv, 2019)"</p>
+<p> The two main types of versioning are in relation to URI Versioning, and Media Type Versioning.</p>
+<p>When we develope an API around a URI space, new URI space or a new URI version is needed. This is due to the immutableality of the representations of resources.</p>
+<p>When we develope an API around custom media types, we need to version it according to media type versioning.</p>
+<p><strong>References:</strong></p>
+<p>Paraschiv, E. (2019, October 18). <em>Versioning a REST API</em>. Retrieved November 20, 2019, from https://www.baeldung.com/rest-versioning.</p>

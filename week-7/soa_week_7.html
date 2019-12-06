@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  <h2>Introduction</h2>
+  <p>The main advantages of the web services are:
+    <ul>
+      <li>interoperability between applications.</li>
+      <li>reusability of existing services.</li>
+      <li>easy distribution of information between consumers.</li>
+      <li>fast development.</li>
+    </ul>
+  </p>
+  <p>The developed application is the key element but the technology used for the application server has a major impact on the results of the implemented application.</p>
+  <p>A web container is a part of a server that manages servlets, Java Server Pages (JSP) as well as other web components.</p>
+  <p>The technology of the web container has a very important role in determining the performance and adaptation capability of the web service components.</p>
+  <p>The web services can be implemented by using different platforms.</p>
+  <p>An example for this is Oracle GlassFish Server (Sun GlassFish Enterprise Server and, previously, Sun Java System Application Server) that represents a platform for delivering server side Java applications and web services.</p>
+  <p>This is an application server Java EE6 certified and it represents an essential component of the Java Enterprise System, that supports the integrated development tools.</p>
+  <p>Oracle GlassFish Server provides an environment to develop and implement Java TM–XML applications as well as web services.</p>
+  <p>GlassFish Server applications include standard characteristics for Java Platform, Java EE platform as well as specific characteristics for GlassFish Server.</p>
+  <p>GlassFish Server includes the following modules:
+    <ul>
+      <li>Web Module – represents a collection of servlets, EJB’s, HTML pages and classes that can be implemented on a number of Java EE application servers.</li>
+      <li>EJB Module –it’s a software unit that is composed from one or more enterprise beans as well as an implementation descriptor EJB.</li>
+      <li>Connector Module –it’s a software unit with the purpose to offer portability to the EJB components for accessing the data and information system.</li>
+      <li>Application Client Module is the client application module and it is that software unit composed of one or more classes and descriptors that have a role in implementing the client application.</li>
+      <li>Lifecycle Module represents the module that has the functions to define the system lifecycle and it has the purpose to execute Java based tasks in the GlassFish server environment.</li>
+    </ul>
+  </p>
+  <p>The principles of service-oriented architecture are independent from any provider, product or technology.</p>
+  <p>According to OASIS (Organization for the Advancement of Structured Information Standards), Service Oriented Architecture (SOA) is an architectural style that supports service orientation based on a way of thinking in terms that are specific to services and development focused on services and the results of their implementation.</p>
+  <p>As the name suggests, SOA also involves architecture.</p>
+  <p>The results of adoption and promotion of SOA capabilities allow:
+    <ul>
+      <li>Increase speed of reaction of the users: service enables implementation of flexible systems, and architecture cantered on business and technology enables impact of changes to be isolated and business processes to be modified more easily and quickly in order to meet performance requirements;</li>
+      <li>Simplify the delivery of enhanced services: SOA and business models based on "services" allow effective management of cooperation by simplifying access to services and value streamlined chains beyond organizational boundaries;</li>
+      <li>Streamlining business administration: TO facilitate investment leading to reduced leverage level of public and private sector (legacy of the economic crisis) through a model centered on the reuse of existing capacities, eliminate undesired redundancies and existence of visionary project architects in the IT field;</li>
+      <li>Share information: SOA offers a new and effective approach to implementing reusable data exchange, logic interoperability from multiple activities of faster data modeling evolving towards physical interoperability;</li>
+      <li>Transparency, security and resiliency in operation: SOA has an infrastructure built on performant standards enabling consolidation, simplification and optimization of IT infrastructure, which in turn will allow a greater transparency and auditing capacity, as well as improving business continuity.</li>
+    </ul>
+  </p>
+</div>
+<div>
+  <h2>2. SOA architecture and design</h2>
+  <p>SOA architectures depend on data and services, which are described by metadata that should meet the following criteria:
+    <ul>
+      <li>The metadata may be used by other applications, such as a catalog service to perform automatic discovery of services without changing the functionality of a service contract;</li>
+      <li>Metadata should be provided in a form in which system designers can understand and manage services at a reasonable cost and effort.</li>
+    </ul>
+  </p>
+  <p>SOA services require independent connection to operation systems and other technologies that underlie applications. SOA separates functions into distinct units or services, which developers make available through a network in order to allow users to combine and to re-use them in making applications.</p>
+  <p>These services and their consumers communicate with each other by passing data into a common welldefined format, or by coordinating an activity between two or more services, and these include the following:
+    <ul>
+      <li>Services of reusability - logic is divided into services with the intention of re-using them.</li>
+      <li>Autonomy of services - services have control over encapsulated logic from design time and runtime.</li>
+      <li>Services status - minimizing resource consumption produced by management of status information when needed.</li>
+      <li>Contract of standardized services - services adhere to an agreement of communication and are defined collectively by one or more descriptors.</li>
+      <li>Loose coupling service - service maintain a relationship that minimizes dependencies and only requires that they maintain a reference to the other.</li>
+      <li>Abstraction of services - beyond their description in the service contract, services hide logic from the outside world.</li>
+      <li>Discovery services - services are complemented with metadata through which they can be traced effectively and interpreted by different service registries.</li>
+      <li>Services composability - services are participants to the composition of other services, regardless of size and complexity of composition.</li>
+      <li>Service granularity - as design consideration it ensures the purpose and optimal level of granularity necessary to provide functionality in a service operation.</li>
+      <li>In some cases, services are deformalized for different purposes (optimize performance, access, aggregation, etc).</li>
+      <li>Services optimization - quite obvious that for effective implementation are preferred high-quality services to those of inferior quality.</li>
+      <li>Services relevance - functionality should be present at a level of granularity recognized by the user as a significant service for him.</li>
+    </ul>
+  </p>
+  <p>In the case of a reference model for SOA,OASIS has a standard Reference Model for SOA, shown in Figure 1, which is not directly tied to any standards, technologies, or other concrete implementation details.</p>
+</div>
+<div>
+  <h2>3. Approach of web-services</h2>
+  <p>These services may be either new applications or encapsulate existing old systems to make them active on the network. Each SOA block can play one or both of the following two roles: service provider and /or service consumer according to Figure 2.</p>
+  <p>Service provider- the service provider creates a web service and, possibly, publishes interface and access information to the service register.</p>
+  <p>Each provider should decide what services exposes, how to compromise between security and easy availability, how to easily charge services, or (if no fee applies) how/whether to exploit them for other value.</p>
+  <p>Also, the supplier has the obligation to decide in which category services should be listed for a broker type service and what kind of partner agreements is the service required to use.</p>
+  <p>Supplier records what services are available in the register and list all potential recipients of services.</p>
+  <p>The implementing party then decides on broker incidence.</p>
+  <p>Public brokers are available on Internet, while private brokers are available only to a restricted public, such as the company intranet users.</p>
+  <p>In addition, the amount of information provided should be decided from the beginning.</p>
+  <p>Service consumer - regardless of what service the service consumers want, they need to take it from brokers’ register making a bind with the respective service and then using it.</p>
+  <p>They can access multiple services if the service broker offers multiple services.</p>
+  <p>In the future you can deploy A Virtual Cloud Computing Provider for Mobile Devices.</p>
+  <p>Web Services Description Language (WSDL) is a format for describing Web services specifications.</p>
+  <p>It is a way to describe services and how they should be related to specific network elements.</p>
+  <p>WSDL have three elements: definitions, operations and services connections (bindings).</p>
+  <p>Definitions are generally expressed in XML and include both data type definitions and definitions of messages, which use definitions of data types.</p>
+  <p>XML represents a condensed form for Standard Generalized Markup Language (SGML) that allows developers to create customised labels and provides flexibility in presenting information.</p>
+  <p>XML is composed of 2 metalanguages, both described in the same document.</p>
+  <p>The first language is a set of rules for developing XML documents, and the second represents a set of rules to develop definitions for the type of the XML document, or DTD (Document Type Definition) with the purpose to allow validation of the XML document according to defined constrains.</p>
+  <p>Basically, XML has a dual nature, as a metalanguage that allows the description of new document and vocabulary structures as well as a language used to express the structure and vocabulary for a document.</p>
+  <p>An XML document contains text, that is 36 Service-Oriented Architecture (SOA) and Web Services usually composed of a number of marks and character data.</p>
+  <p>Vocabulary within an organization could be designed especially for that organization.</p>
+  <p>It may or may not be based on an industry-wide vocabulary.</p>
+  <p>If the definitions of the types of data and messages should be shared between organizations, then most likely an industrywide vocabulary shall be used.</p>
+  <p>However XML language is not absolutely necessary for definitions.</p>
+  <p>For example, OMG Interface Definition Language (IDL) could be used instead of XML.</p>
+  <p>If a different definition language were used, senders and recipients should agree on the language and vocabulary.</p>
+  <p>However, over time, vocabulary and XML-based messages have dominated.</p>
+  <p>XML namespaces are used to ensure uniqueness between XML element names in definitions, operations, and service connections.</p>
+</div>
+<div>
+  <h2>4. Metadata management</h2>
+  <p>Metadata management includes information description about a Web service needed to build the body of the message (including data types and structures) and message headers, so that a service consumer may invoke a service. Public service provider posts metadata to enable consumer discovery and use them so as to build messages, which can be successfully processed by the supplier.</p>
+  <p>So when consumer invokes a service, it is important for him to understand not only the types and structures of data to send, but also understand additional qualities of the services provided, such as security, reliability, or transaction capacity.</p>
+  <p>If one or more of these features are missing from the message, this can hinder the successful processing of the message.</p>
+  <p>Specifications for metadata include:
+    <ul>
+      <li>XML-Schema - for the expression of data and more important for structuring and expressing a policy.</li>
+      <li>WSDL – for the combination of messages and message exchange patterns with names and addresses of network services.</li>
+      <li>WS-Addressing – for addressing an endpoint and reference properties associated to that endpoint. Many of the other extended specifications require WS-Addressing to define endpoints and reference properties in models of communication.</li>
+      <li>WS-Policy - for associating quality of services with a WSDL definition.</li>
+      <li>WSPolicy is a framework that includes policy type statements for various aspects of security, transaction capacity and reliability.</li>
+      <li>WS-Metadata Exchange - to interrogate and discover metadata associated with a Web service, including the ability to bring a WSDL file and associated WS-Policy.</li>
+    </ul>
+  </p>
+</div>
+<div>
+  <h2>5. Ensure SOA security</h2>
+  <p>Ensuring SOA security in an ecosystem of covered regulated services has implications over distributed policy and nature of the mechanisms used to secure SOA.</p>
+  <p>Security expressed through security policy messages should follow the same architectural implications for policies and contracts involved.</p>
+  <p>Security policies should have support, storage, and distribution mechanisms for describing them.</p>
+  <p>The descriptors of services should include a sufficiently rich meta-structure to indicate clearly which security policies are necessary and where policy options are possible.</p>
+  <p>The mechanisms that make up the context of execution in SOA-based systems should: protect privacy and integrity of message exchanges; messages should be distributed so as to ensure the availability of policy-based identification, authentication and authorization; ensure the availability of services for consumers; be able to scale to support safety services to a growing ecosystem of services; be able to support security between different means or channels of communication; contain a framework for resolving conflicts between security policies.</p>
+  <p>Security issues apply to every level of SOA stacks and require a variety of mechanisms of protection against the many challenges and threats coming (some of them) from distributed computing architectures.</p>
+</div>
+<div>
+  <h2>6. Conclusions</h2>
+  <p>Most times it is necessary for protection mechanisms to be used in combination with specific solutions to protect against a specific threat or combination of threats.</p>
+  <p>In the world of Web services and SOAs it is particularly important to assess the need for protection at network and transfer of messages level, as well as data contained in the message.</p>
+  <p>Basic security mechanisms are built around encryption, authentication mechanisms, and authorization mechanism and usually they include extensive logging and audit methods to detect potential problems.</p>
+  <p>Industry has reached consensus around a single framework of specifications, WSSecurity, although efforts continue to complete the profiles and related additional specifications.</p>
+  <p>Providing specialized experience often requires intensive interaction of data and introduces new challenges in managing data between client and server levels.</p>
+  <p>Data synchronization is a key concept and requires users to work within a distributed system.</p>
+  <p>Such services allow developers to focus on applications on business logic instead of bothering with infrastructure issues.</p>
+  <p>Modern service orientation and serverbased infrastructures enable automatic management of temporary disconnection, ensuring secure delivery of data to and from client application.</p>
+  <p>Some services offer data-push functions, allowing data to be pushed automatically to the client application, without a prior query.</p>
+  <p>This can be achieved through intuitive or deductive methods to ensure provision of data according to customer requirements.</p>
+  <p>This very scalable capability allows to push simultaneously data to thousands of users, for example applications of stock traders, human resource monitoring or automating various logistical activities.</p>
+</div>
+</body>
+</html>

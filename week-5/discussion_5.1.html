@@ -1,0 +1,22 @@
+<p><em>How does a client application find and parse an entity-body?</em></p>
+<p>When the &lt;form&gt; tag has "POST" as its method attribute, it describes an HTTP POST request that can do anything at all. The &lt;input&gt; tags are still present, but instead of being used to create the request URL, they’re used to create an entity-body with the media type application/x-www-form-urlencoded. The request URL is hard-coded in the action attribute of the &lt;form&gt; tag. (Richardson & Amundsen, p.111, 2013)</p>
+<p><em>Explain what profiles are and how they are related to application semantics.</em></p>
+<p>"A profile is defined not to alter the
+   semantics of the resource representation itself, but to allow clients
+   to learn about additional semantics (constraints, conventions,
+   extensions) that are associated with the resource representation, in
+   addition to those defined by the media type and possibly other
+   mechanisms. (Wilde, 2013)"</p>
+<p>There are three ways to link a document to its profile.</p>
+<ul>
+  <li>Use an IANA link relation link. (&lt;link href="profile_url_here" rel="profile"&gt;)</li>
+  <li>Add a profile link to the content-type header. (application/collection+json;profile="profile_url_here")</li>
+  <li>Use the itemtype hypermedia control. (&lt;div itemtype="profile_url_here"&gt;)</li>
+</ul>
+<p><em>What are application semantics?</em></p>
+<p>Application semantics is how we, as developers, can try to link things in the application to items in the real world.</p>
+<p><em>Using your own words, what does a machine-readable profile mean?</em></p>
+<p>This is a profile that is written in a way that allows the computer to make the connections semanticly between what is there and what the data represents. This allows for a tighter compling between the physical and the virtural.</p>
+<p><strong>References:</strong></p>
+<p>Richardson, L., & Amundsen, M. (2013). RESTful Web APIs (First). Sebastopol, CA: O'Rwilly Media, Inc.</p>
+<p>Wilde, E. (2013, March). The 'profile' Link Relation Type. Retrieved November 9, 2019, from https://tools.ietf.org/rfc/rfc6906.txt.</p>
