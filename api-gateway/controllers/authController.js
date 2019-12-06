@@ -41,27 +41,15 @@ exports.user_register = function (request, response) {
 
 // Verify token on GET
 exports.user_token = function(request, response) {
-  // Get the token
-  var token = request.headers['x-access-token'];
+  User.getById(request.userId, function (error, user) {
+    // Send 500 status and message if there problem finding the user
+    if (error) return response.status(500).send('There was a problem finding the user: ' + error);
 
-  // Send 401 status with message if there is not token
-  if (!token) return response.status(401).send({ auth: false, message: 'No token provided: ' + error });
+    // Send 404 status and message if there is no user
+    if (!user) return response.status(404).send('No user found: ' + error);
 
-  // Test the token
-  jwt.verify(token, config.web.secret, function (error, decoded) {
-    // Send 500 status and message if there is an error
-    if (error) return response.status(500).send({ auth: false, message: 'Failed to authenticate token: ' + error });
-
-    User.getById(decoded.id, function (error, user) {
-      // Send 500 status and message if there problem finding the user
-      if (error) return response.status(500).send('There was a problem finding the user: ' + error);
-
-      // Send 404 status and message if there is no user
-      if (!user) return response.status(404).send('No user found: ' + error);
-
-      // Send 200 status along with user object
-      response.status(200).send(user);
-    });
+    // Send 200 status along with user object
+    response.status(200).send(user);
   });
 };
 
