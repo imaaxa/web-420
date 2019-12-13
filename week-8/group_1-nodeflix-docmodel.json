@@ -1,0 +1,63 @@
+{
+  'user' {
+    '_id': ObjectId(""),
+    'firstName': '',
+    'lastName': '',
+    'userName': '',
+    'password': '',
+    'age': '',
+    'gender': '',
+    'phoneNumber': '',
+    'email': '',
+    'accessLevel': {
+      0: 'Unlimited movies',
+      1: 'Unlimited TV shows',
+      'basic': {
+        0: 'One active streaming connection at a time',
+        1: 'Limited commercials'
+      }
+      'plus': {
+        0: 'Pre-recorded sporting events',
+        1: 'Max-Two active streaming connection at a time',
+        2: 'No commercials'
+      }
+      'premium': {
+        0: 'Pre-recorded sporting events',
+        1: 'Max-four active streaming connection at a time',
+        2: 'No commercials',
+        3: 'DVR',
+        4: 'Two premium channels'
+      }
+    },
+    'activeAccount': true,
+    'startDate': 1575704378,
+    'address': [
+      1: {
+        'street1': '',
+        'street2': '',
+        'city': '',
+        'state': '',
+        'postalCode': '',
+        'country': '',
+        'misc': '',
+        'type': 'home'
+      },
+      2: {
+        'street1': '',
+        'street2': '',
+        'city': '',
+        'state': '',
+        'postalCode': '',
+        'country': '',
+        'misc': '',
+        'type': 'billing'
+      }
+    ],
+    'payment': {
+      'name': ,
+      'number': ,
+      'expiration': ,
+      'cvc': ,
+    }
+  }
+}

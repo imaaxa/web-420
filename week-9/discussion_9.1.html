@@ -1,11 +1,16 @@
-<p><em></em></p>
-<p></p>
-<p><em></em></p>
-<p></p>
-<p><em></em></p>
-<p></p>
-<p><em></em></p>
-<p></p>
-<p></p>
+<p><em>Explain the difference between authentication and authorization.</em></p>
+<p>Authentication is the process where the user needs to prove they are who they say they are.</p>
+<p>Authorization is the process where the user just proves they have permission.</p>
+<p><em>Select two HTTP status codes and describe how they are used and why they are important.  <strong>You CANNOT use 404, 500, and 200.</strong></em></p>
+<p>Status Code: 100</p>
+<p>Importance: low - medium</p>
+<p>This is the status code that is given when utalizing the LBYL request. This signifies that the system acnologies that you are wanting to make a request, the system can take the request, and you may make the request.</p>
+<p>The request headers need to be set to "100-continue".</p>
+<p>Status Code: 301</p>
+<p>Importance: medium</p>
+<p>This is the status code that is given when the resource requested has been permanently moved to a different location. This prevents a URL from breaking when the underling structure of the API changes.</p>
+<p>The request headers should put the canonical URL in Location.</p>
+<p>Entity-body should send a hypermedia document that links to the new location.</p>
+<p>Status Codes came from RESTful Web APIs by Richardson. (Richardson, 2013)</p>
 <p><strong>References:</strong></p>
-<p></p>
+<p>Richardson, L. (2013). <em>RESTful Web APIs</em>.</p>
